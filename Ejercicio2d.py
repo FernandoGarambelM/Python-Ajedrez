@@ -1,5 +1,7 @@
 from interpreter import draw
 from chessPictures import *
-queen = Picture(QUEEN)
-fourQueens = queen.horizontalRepeat(4)
-draw(fourQueens) 
+square = Picture(SQUARE) 
+blackSquare = square.negative()
+bloque = square.join(blackSquare)
+fila = bloque.horizontalRepeat(4)
+draw(fila)

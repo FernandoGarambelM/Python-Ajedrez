@@ -23,18 +23,19 @@ class Picture:
     horizontal = []
     for value in self.img[::-1]:
     	horizontal.append(value)
-    return horizontal
+    return Picture(horizontal)
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
     negative = []
     for value in self.img:
       negative.append([self._invColor(color) for color in value])
-    return negative
+    return Picture(negative)
 
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento 
         al lado derecho de la figura actual """
+    
     return Picture(None)
 
   def up(self, p):
@@ -64,4 +65,4 @@ class Picture:
       for value in self.img:
         a += value[selfLen -1 - i]
       b.append(a)
-    return b
+    return Picture(b)

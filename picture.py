@@ -1,7 +1,7 @@
 from colors import *
 class Picture:
   def __init__(self, img):
-    self.img = img;
+    self.img = img
 
   def __eq__(self, other):
     return self.img == other.img
@@ -53,12 +53,13 @@ class Picture:
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
     undering = []
-    for value in p.img:
-      undering.append(value)
-    for value in self.img:
-      undering.append(value)
+    for i in range(len(self.img)):
+      undering.append(self.img[i])
+      for j in range(len(p.img[i])):
+        if p.img[i][j] != " ":
+          undering[i] = undering[i][:j] + p.img[i][j] + undering[i][j+1:]
     return Picture(undering)
-  
+    
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
         la cantidad de veces que indique el valor de n """

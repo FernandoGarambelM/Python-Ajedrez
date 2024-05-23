@@ -15,14 +15,14 @@ class Picture:
     """ Devuelve el espejo vertical de la imagen """
     vertical = []
     for value in self.img:
-    	vertical.append(value[::-1])
+      vertical.append(value[::-1])
     return Picture(vertical)
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
     horizontal = []
     for value in self.img[::-1]:
-    	horizontal.append(value)
+      horizontal.append(value)
     return Picture(horizontal)
 
   def negative(self):
@@ -52,12 +52,12 @@ class Picture:
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
         figura actual """
-    undering = []
+    undering = [list(line) for line in self.img]  
     for i in range(len(self.img)):
-      undering.append(self.img[i])
       for j in range(len(p.img[i])):
         if p.img[i][j] != " ":
-          undering[i] = undering[i][:j] + p.img[i][j] + undering[i][j+1:]
+          undering[i][j] = p.img[i][j]  
+    undering = ["".join(line) for line in undering]  
     return Picture(undering)
     
   def horizontalRepeat(self, n):

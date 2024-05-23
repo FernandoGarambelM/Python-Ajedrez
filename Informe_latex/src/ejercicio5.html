@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Suma de Valores</title>
+</head>
+<body>
+
+<h1>Calculadora de Suma de Valores</h1>
+
+<form id="formulario">
+    <label for="cantidadValores">Ingrese la cantidad de valores:</label>
+    <input type="number" id="cantidadValores" min="1">
+    <button type="button" onclick="crearTabla()">Crear Tabla</button>
+</form>
+
+<div id="contenedorTabla"></div>
+
+<button onclick="calcularSuma()">Calcular Suma</button>
+<p id="resultado"></p>
+
+<script>
+    function crearTabla() {
+        var cantidadValores = parseInt(document.getElementById('cantidadValores').value);
+
+        var tablaHTML = '<table border="1"><tr><th>Valores</th></tr>';
+        for (var i = 0; i < cantidadValores; i++) {
+            var valor = Math.floor(Math.random() * 100); 
+            tablaHTML += '<tr><td>' + valor + '</td></tr>';
+        }
+        tablaHTML += '</table>';
+
+        document.getElementById('contenedorTabla').innerHTML = tablaHTML;
+    }
+
+    function calcularSuma() {
+        var filas = document.querySelectorAll('#contenedorTabla table tr');
+        var suma = 0;
+        filas.forEach(function(fila, indice) {
+            if (indice !== 0) {
+                var valor = parseInt(fila.querySelector('td').innerText);
+                suma += valor;
+            }
+        });
+        document.getElementById('resultado').innerText = "La suma de los valores es: " + suma;
+    }
+</script>
+
+</body>
+</html>

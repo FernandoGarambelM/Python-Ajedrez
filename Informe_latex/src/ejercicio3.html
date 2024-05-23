@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias para el Dia de Arequipa</title>
+</head>
+<body>
+
+<h1>Dias para el Dia de Arequipa</h1>
+
+<p>El "Dia de Arequipa" es el 15 de agosto.</p>
+<p>Ingrese la fecha actual para calcular cuantos dias faltan:</p>
+
+<input type="date" id="fechaActual">
+<button onclick="calcularDiasFaltantes()">Calcular</button>
+
+<p id="resultado"></p>
+
+<script>
+    function calcularDiasFaltantes() {
+        var fechaActual = new Date(document.getElementById('fechaActual').value);
+        var diaArequipa = new Date(fechaActual.getFullYear(), 7, 15); 
+
+        var diferencia = diaArequipa - fechaActual;
+
+        var diasFaltantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+
+        if (diasFaltantes === 0) {
+            document.getElementById('resultado').innerText = "Hoy es el Dia de Arequipa!";
+        } else if (diasFaltantes === 1) {
+            document.getElementById('resultado').innerText = "Manana es el Dia de Arequipa!";
+        } else {
+            document.getElementById('resultado').innerText = "Faltan " + diasFaltantes + " dias para el Dia de Arequipa.";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Tamano y Color del Texto</title>
+    <style>
+        #texto {
+            font-size: 16px; 
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<p id="texto">Hola amigos :D</p>
+
+<button onclick="aumentarTexto()">Aumentar Tamano</button>
+<button onclick="disminuirTexto()">Disminuir Tamano</button>
+
+<button onclick="cambiarColor('blue')">Azul</button>
+<button onclick="cambiarColor('green')">Verde</button>
+<button onclick="cambiarColor('red')">Rojo</button>
+<script>
+    function aumentarTexto() {
+        var texto = document.getElementById('texto');
+        var fontSize = window.getComputedStyle(texto, null).getPropertyValue('font-size');
+        var currentSize = parseFloat(fontSize);
+        texto.style.fontSize = (currentSize + 2) + 'px'; 
+    }
+	
+    function disminuirTexto() {
+        var texto = document.getElementById('texto');
+        var fontSize = window.getComputedStyle(texto, null).getPropertyValue('font-size');
+        var currentSize = parseFloat(fontSize);
+        texto.style.fontSize = (currentSize - 2) + 'px'; 
+    }
+	
+    function cambiarColor(color) {
+        var texto = document.getElementById('texto');
+        texto.style.color = color;
+    }
+</script>
+
+
+</body>
+</html>

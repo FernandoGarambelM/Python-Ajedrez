@@ -297,7 +297,28 @@ def under(self, p):
 	\begin{itemize}
 		\item Devuelve una nueva figura poniendo la figura p sobre la figura actual
 	\end{itemize}
-
+	\begin{lstlisting}[language=Python,caption={Función horizontalRepeat(self, n)}][H]
+def horizontalRepeat(self, n):
+    horizontal = []
+    for value in self.img:
+      horizontal.append(value * n)
+    return Picture(horizontal)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve una nueva figura repitiendo la figura actual al costado la cantidad de veces que indique el valor de n
+	\end{itemize}
+	\begin{lstlisting}[language=Python,caption={Función up(self, p)}][H]
+def up(self, p):
+    uping = []
+    for value in self.img:
+      uping.append(value)
+    for value in p.img:
+      uping.append(value)
+    return Picture(uping)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve una nueva figura poniendo la figura actual por encima de la del argumento
+	\end{itemize}
 
 
 	\lstinputlisting[language=Python, caption={Código de Picture},numbers=left,]{src/picture.py}

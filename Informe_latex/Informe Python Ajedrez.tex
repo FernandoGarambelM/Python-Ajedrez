@@ -261,15 +261,16 @@ def negative(self):
 	\begin{itemize}
 		\item Devuelve un negativo de la imagen 
 	\end{itemize}
-	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
-def verticalMirror(self):
-    vertical = []
-    for value in self.img:
-      vertical.append(value[::-1])
-    return Picture(vertical)
+	\begin{lstlisting}[language=Python,caption={Función join(self, p)}][H]
+def join(self, p):
+    joinedImg = []
+    for i in range(len(self.img)):
+        joinedRow = "".join(self.img[i]) + "".join(p.img[i])
+        joinedImg.append(joinedRow)
+    return Picture(joinedImg)
 	\end{lstlisting}
 	\begin{itemize}
-		\item Devuelve el espejo vertical de la imagen 
+		\item Devuelve una nueva figura poniendo la figura del argumento al lado derecho de la figura actual
 	\end{itemize}
 	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
 def verticalMirror(self):

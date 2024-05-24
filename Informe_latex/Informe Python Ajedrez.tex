@@ -318,16 +318,19 @@ def verticalRepeat(self, n):
 	\begin{itemize}
 		\item Devuelve una nueva figura repitiendo la figura actual debajo, la cantidad de veces que indique el valor de n
 	\end{itemize}
-	\begin{lstlisting}[language=Python,caption={verticalRepeat(self, n)}][H]
-def verticalRepeat(self, n):
-    vertical = []
-    for i in range(n):
+	\begin{lstlisting}[language=Python,caption={rotate(self)}][H]
+def rotate(self):
+    b = []
+    selfLen = len(self.img)
+    for i in range(selfLen):
+      a = ""
       for value in self.img:
-        vertical.append(value)
-    return Picture(vertical)
+        a += value[selfLen -1 - i]
+      b.append(a)
+    return Picture(b)
 	\end{lstlisting}
 	\begin{itemize}
-		\item Devuelve una nueva figura poniendo la figura actual por encima de la del argumento
+		\item Devuelve una figura rotada en 90 grados, en sentido antihorario
 	\end{itemize}
 
 

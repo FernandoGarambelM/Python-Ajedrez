@@ -284,15 +284,18 @@ def up(self, p):
 	\begin{itemize}
 		\item Devuelve una nueva figura poniendo la figura actual por encima de la del argumento
 	\end{itemize}
-	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
-def verticalMirror(self):
-    vertical = []
-    for value in self.img:
-      vertical.append(value[::-1])
-    return Picture(vertical)
+	\begin{lstlisting}[language=Python,caption={Función under(self, p)}][H]
+def under(self, p):
+    undering = [list(line) for line in self.img]  
+    for i in range(len(self.img)):
+      for j in range(len(p.img[i])):
+        if p.img[i][j] != " ":
+          undering[i][j] = p.img[i][j]  
+    undering = ["".join(line) for line in undering]  
+    return Picture(undering)
 	\end{lstlisting}
 	\begin{itemize}
-		\item Devuelve el espejo vertical de la imagen 
+		\item Devuelve una nueva figura poniendo la figura p sobre la figura actual
 	\end{itemize}
 
 

@@ -251,15 +251,15 @@ def horizontalMirror(self):
 	\begin{itemize}
 		\item Devuelve el espejo horizontal de la imagen
 	\end{itemize}
-	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
-def verticalMirror(self):
-    vertical = []
+	\begin{lstlisting}[language=Python,caption={Función negative(self)}][H]
+def negative(self):
+    negative = []
     for value in self.img:
-      vertical.append(value[::-1])
-    return Picture(vertical)
+      negative.append([self._invColor(color) for color in value])
+    return Picture(negative)
 	\end{lstlisting}
 	\begin{itemize}
-		\item Devuelve el espejo vertical de la imagen 
+		\item Devuelve un negativo de la imagen 
 	\end{itemize}
 	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
 def verticalMirror(self):

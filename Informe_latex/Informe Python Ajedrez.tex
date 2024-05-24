@@ -272,15 +272,17 @@ def join(self, p):
 	\begin{itemize}
 		\item Devuelve una nueva figura poniendo la figura del argumento al lado derecho de la figura actual
 	\end{itemize}
-	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
-def verticalMirror(self):
-    vertical = []
+	\begin{lstlisting}[language=Python,caption={Función up(self, p)}][H]
+def up(self, p):
+    uping = []
     for value in self.img:
-      vertical.append(value[::-1])
-    return Picture(vertical)
+      uping.append(value)
+    for value in p.img:
+      uping.append(value)
+    return Picture(uping)
 	\end{lstlisting}
 	\begin{itemize}
-		\item Devuelve el espejo vertical de la imagen 
+		\item Devuelve una nueva figura poniendo la figura actual por encima de la del argumento
 	\end{itemize}
 	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
 def verticalMirror(self):

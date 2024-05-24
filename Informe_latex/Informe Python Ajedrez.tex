@@ -230,6 +230,73 @@ draw(rock)
 		%\label{img:mot2}
 		%\caption{Product backlog.}
 	\end{figure}
+\section{Implementación de funciones de Picture}
+	\begin{lstlisting}[language=Python,caption={Función verticalMirror(self)}][H]
+def verticalMirror(self):
+    vertical = []
+    for value in self.img:
+      vertical.append(value[::-1])
+    return Picture(vertical)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve el espejo vertical de la imagen 
+	\end{itemize}
+	\begin{lstlisting}[language=Python,caption={Función horizontalMirror(self)}][H]
+def horizontalMirror(self):
+    """ Devuelve el espejo horizontal de la imagen """
+    horizontal = []
+    for value in self.img[::-1]:
+      horizontal.append(value)
+    return Picture(horizontal)
+
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve el espejo vertical de la imagen 
+	\end{itemize}
+	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
+def verticalMirror(self):
+    vertical = []
+    for value in self.img:
+      vertical.append(value[::-1])
+    return Picture(vertical)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve el espejo vertical de la imagen 
+	\end{itemize}
+	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
+def verticalMirror(self):
+    vertical = []
+    for value in self.img:
+      vertical.append(value[::-1])
+    return Picture(vertical)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve el espejo vertical de la imagen 
+	\end{itemize}
+	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
+def verticalMirror(self):
+    vertical = []
+    for value in self.img:
+      vertical.append(value[::-1])
+    return Picture(vertical)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve el espejo vertical de la imagen 
+	\end{itemize}
+	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
+def verticalMirror(self):
+    vertical = []
+    for value in self.img:
+      vertical.append(value[::-1])
+    return Picture(vertical)
+	\end{lstlisting}
+	\begin{itemize}
+		\item Devuelve el espejo vertical de la imagen 
+	\end{itemize}
+
+
+
+	\lstinputlisting[language=Python, caption={Código de Picture},numbers=left,]{src/picture.py}
 \section{Referencias}
 \begin{itemize}			
 	\item \url{https://www.w3schools.com/python/python_reference.asp}

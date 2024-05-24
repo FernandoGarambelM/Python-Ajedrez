@@ -243,15 +243,13 @@ def verticalMirror(self):
 	\end{itemize}
 	\begin{lstlisting}[language=Python,caption={Función horizontalMirror(self)}][H]
 def horizontalMirror(self):
-    """ Devuelve el espejo horizontal de la imagen """
     horizontal = []
     for value in self.img[::-1]:
       horizontal.append(value)
     return Picture(horizontal)
-
 	\end{lstlisting}
 	\begin{itemize}
-		\item Devuelve el espejo vertical de la imagen 
+		\item Devuelve el espejo horizontal de la imagen
 	\end{itemize}
 	\begin{lstlisting}[language=Python,caption={Función VerticalMirror()}][H]
 def verticalMirror(self):
